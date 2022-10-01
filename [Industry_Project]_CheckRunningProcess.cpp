@@ -1,8 +1,10 @@
 #include<Windows.h>
 #include<iostream>
 #include<stdio.h>
-//CreateToolhelp32Snapshot(), Process32First(), Process32Next() »ç¿ëÇÏ±âÀ§ÇÑ ¶óÀÌºê·¯¸®
+//CreateToolhelp32Snapshot(), Process32First(), Process32Next() ì‚¬ìš©í•˜ê¸°ìœ„í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬
 #include<TlHelp32.h>
+// for change WCHAR to Char
+#include<comdef.h>
 
 using namespace std;
 
@@ -10,25 +12,35 @@ int main(void) {
 
     HANDLE hProcess = NULL;
 
-    // ÇÁ·Î¼¼½ºÀÇ Á¤º¸¸¦ ÀúÀåÇÒ ±¸Á¶Ã¼.
+    // í”„ë¡œì„¸ìŠ¤ì˜ ì •ë³´ë¥¼ ì €ì¥í•  êµ¬ì¡°ì²´.
     PROCESSENTRY32 pe32 = { 0 };
 
-    // ¸ğµç ÇÁ·Î¼¼½º¸¦ ¹Ş¾Æ¿Â´Ù.
+    // ëª¨ë“  í”„ë¡œì„¸ìŠ¤ë¥¼ ë°›ì•„ì˜¨ë‹¤.
     hProcess = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 
-    // ±¸Á¶Ã¼ÀÇ Å©±â¸¦ Á¤ÇØÁÜ.
+    // êµ¬ì¡°ì²´ì˜ í¬ê¸°ë¥¼ ì •í•´ì¤Œ.
     pe32.dwSize = sizeof(PROCESSENTRY32);
 
     cout << "System Process Name" << "          " << "PID" << endl;
 
-    // ±¸Á¶Ã¼¿¡¼­ Á¤º¸¸¦ ¹Ş¾Æ¿À¸é
+    // êµ¬ì¡°ì²´ì—ì„œ ì •ë³´ë¥¼ ë°›ì•„ì˜¤ë©´
     if (Process32First(hProcess, &pe32)) {
 
-        // ´ÙÀ½ ÇÁ·Î¼¼½ºÀÇ Á¤º¸µµ ¹Ş¾Æ¿Â´Ù.
+        // ë‹¤ìŒ í”„ë¡œì„¸ìŠ¤ì˜ ì •ë³´ë„ ë°›ì•„ì˜¨ë‹¤.
         while (Process32Next(hProcess, &pe32)) {
 
-            // szExeFile : ÇÁ·Î¼¼½ºÀÇ ÀÌ¸§, th32ProcessID : PID
-            cout << pe32.szExeFile << "     " << pe32.th32ProcessID << endl;
+            // szExeFile : í”„ë¡œì„¸ìŠ¤ì˜ ì´ë¦„, th32ProcessID : PID
+            //cout << pe32.szExeFile << "     " << pe32.th32ProcessID << endl;
+            
+            _bstr_t PN(pe32.szExeFile);
+            const char* processName = PN;
+            
+            //WCHARì€ cmdì— ì •ìƒì ìœ¼ë¡œ ì¶œë ¥ì´ ì•ˆë˜ì„œ charí˜•ìœ¼ë¡œ ë°”ê¾¸ê³  ì¶œë ¥ì„ í•´ì¤˜ì•¼í•œë‹¤.
+            cout << processName << "     " << pe32.th32ProcessID << endl;
+            
+            if(!strcmp(processName, "process name if you want to check")){
+                cout<< "check" << endl;
+            }
 
         }
     }
