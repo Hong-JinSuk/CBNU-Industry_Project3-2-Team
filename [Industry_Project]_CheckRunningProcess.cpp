@@ -30,7 +30,6 @@ int main(void) {
         while (Process32Next(hProcess, &pe32)) {
 
             // szExeFile : 프로세스의 이름, th32ProcessID : PID
-            //cout << pe32.szExeFile << "     " << pe32.th32ProcessID << endl;
             
             _bstr_t PN(pe32.szExeFile);
             const char* processName = PN;
@@ -45,7 +44,7 @@ int main(void) {
         }
     }
     else {
-        printf("CHECK --------------");
+        cout << "-------------Error or End part -------------" << endl;
     }
 
     return 0;
