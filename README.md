@@ -6,7 +6,7 @@
 ## [ Team_Members ]
 |홍진석|장병준|안근우|
 |---|---|---|
-|[Hong-JinSuk](https://github.com/Hong-JinSuk)|[장병준](https://github.com/ID)|[안근우](https://github.com/ID)|
+|[Hong-JinSuk](https://github.com/Hong-JinSuk)|[장병준](https://github.com/ID)|[](https://github.com/ID)|
 
 
 ## [ Demos ]
