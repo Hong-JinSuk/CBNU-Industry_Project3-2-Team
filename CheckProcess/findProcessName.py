@@ -9,7 +9,18 @@ def checkProcessRunning(processName):
 
 # Check if process is exist
 def findProcessName(processName):
-    print('>>>>>>> process name!!')
+    listOfProcess=[]
+    i=0
+    print('>>>>>>>> isExist Checking...')
+    for proc in psutil.process_iter():
+        infoProcess=proc.as_dict(attrs=['name'])
+        
+        if processName.lower() in infoProcess['name'].lower():
+            listOfProcess.append(infoProcess)
+            i+=1
+            
+    print("{}개 찾았습니다!!".format(i))
+    return listOfProcess
 
 
 
