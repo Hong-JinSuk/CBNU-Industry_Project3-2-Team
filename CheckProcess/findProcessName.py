@@ -1,6 +1,11 @@
 # Check if proecss is running
-def processRunning(processName):
-    print('>>>>>>> is running!!')
+def checkProcessRunning(processName):
+    print('>>>>>>>> Checking...')
+    # get all the running process
+    for proc in psutil.process_iter():
+        if processName.lower() in proc.name().lower():
+            return True
+    print('>>>>>>>> complete!!')
 
 # Check if process is exist
 def findProcessName(processName):
