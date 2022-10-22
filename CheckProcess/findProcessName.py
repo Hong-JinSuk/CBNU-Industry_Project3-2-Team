@@ -1,3 +1,5 @@
+import psutil
+
 # Check if proecss is running
 def checkProcessRunning(processName):
     print('>>>>>>>> Checking...')
@@ -23,10 +25,10 @@ def findProcessName(processName):
     return listOfProcess
 
 
-
+# Get the name from file
 process_name='찾을려는 프로세스 이름'
 
-isRunning=processRunning(process_name)
+isRunning=checkProcessRunning(process_name)
 
 # Check isRunning
 if isRunning:
