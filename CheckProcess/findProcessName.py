@@ -16,7 +16,7 @@ def findProcessName(processName):
     i=0
     print('>>>>>>>> isExist Checking...')
     for proc in psutil.process_iter():
-        infoProcess=proc.as_dict(attrs=['name'])
+        infoProcess=proc.as_dict(attrs=['name','pid'])
 
         if processName.lower() in infoProcess['name'].lower():
             listOfProcess.append(infoProcess)
@@ -42,9 +42,12 @@ if isRunning:
 
     # if process is exist in list
     if len(List)>0:
-        print('>>>>>> information of {}'.format(process_name))
+        print('>>>>>>>> information of {}'.format(process_name))
         for element in List:
-            processID = element['name']
-            print(processID)
+            processName = element['name']
+            processPID = element['pid']
+            print(processPID, processName)
     else:
         print('키워드를 포함하는 실행중인 프로세스가 없습니다.')
+
+    print('>>>>>>>> 검사 종료')
