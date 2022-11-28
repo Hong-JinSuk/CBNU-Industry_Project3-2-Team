@@ -5,4 +5,6 @@ def checkMemoryUsage(PID):
     for pid in PID:
         print("--"*30)
         # current process RAM usage
-        # 여기에 psutil을 이용해서 MemUsage를 받아오는 소스 작성
+        total_memory = psutil.virtual_memory()
+        print(total_memory[2]) #psutil.virtual_memory()는 3번째 원소에 메모리 사용률을 반환함.
+        # pid별 메모리 사용률을 받아와야함.
