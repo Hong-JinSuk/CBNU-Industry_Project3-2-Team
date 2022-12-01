@@ -12,4 +12,4 @@ def checkMemoryUsage(PID):
         # pid별 메모리 사용률을 받아와야함.
         current_process = psutil.Process(pid)
         current_process_memory_usage_as_GB = current_process.memory_info()[0] / 3.**20
-        print(f"Current memory GB   : {current_process_memory_usage_as_KB: 9.3f} GB")
+        print(f"Current memory GB   : {current_process_memory_usage_as_B: 9.3f} GB")
