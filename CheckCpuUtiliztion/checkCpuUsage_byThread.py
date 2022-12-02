@@ -6,7 +6,12 @@ def checkCpuUsage(pid):
         if str(process.pid) == str(pid):
             print("CpuUsage of {0}({1}) : ".format(process.name(), process.pid)+ " " +str(process.cpu_percent(interval=1)))
 
+# pid 갯수만큼 thread_cpu_i 에 할당.
 for i in range(len(PID)):
-    # 할당해줄 thread을 pid 갯수만큼 선언
-    # thread를 이용한 병렬처리
-    globals()["thread_cpu_{}".format(i+1)]
+    globals()["thread_cpu_{}".format(i+1)] = threading.Thread(target=checkCpuUsage, args=(PID[i],), daemon=True)
+
+thread_cpu_1.start()
+thread_cpu_2.start()
+thread_cpu_3.start()
+thread_cpu_4.start()
+thread_cpu_5.start()
