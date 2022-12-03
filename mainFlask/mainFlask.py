@@ -4,4 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-  #내용
+  global remained_time
+  return render_template("time.html", time=remained_time)
+
+def test():
+    global remained_time
