@@ -8,10 +8,6 @@ def checkCpuUsage(pid):
 
 # pid 갯수만큼 thread_cpu_i 에 할당.
 for i in range(len(PID)):
-    globals()["thread_cpu_{}".format(i+1)] = threading.Thread(target=checkCpuUsage, args=(PID[i],), daemon=True)
-
-thread_cpu_1.start()
-thread_cpu_2.start()
-thread_cpu_3.start()
-thread_cpu_4.start()
-thread_cpu_5.start()
+    # pid마다 thread로 실행한다.
+    thread = threading.Thread(target=checkCpuUsage, args=(PID[i],), daemon=True)
+    thread.start()
