@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   global remained_time
-  return render_template("time.html", time=remained_time)
+  return render_template("time.html", time=remained_time, process_Name=process_name)
 
 def set_time():
     global remained_time
@@ -23,6 +23,11 @@ def set_time():
 
     return
 
+def checkProcessRunning(processname):
+    for proc in psutil.process_iter():
+        if processname.lower() in proc.name().lower():
+            return True
+  
 if __name__ == '__main__':
     remained_time = 300 # 관리자가 설정할 시간
 
