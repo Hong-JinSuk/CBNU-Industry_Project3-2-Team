@@ -28,7 +28,19 @@ def checkProcessRunning(processname):
     for proc in psutil.process_iter():
         if processname.lower() in proc.name().lower():
             return True
-  
+
+def findProcessName(processName):
+    listOfProcess=[]
+    i=0
+    for proc in psutil.process_iter():
+        infoProcess=proc.as_dict(attrs=['name','pid'])
+
+        if processName.lower() in infoProcess['name'].lower():
+            listOfProcess.append(infoProcess)
+            i+=1
+    
+    return listOfProcess
+
 if __name__ == '__main__':
     remained_time = 300 # 관리자가 설정할 시간
 
@@ -44,6 +56,7 @@ if __name__ == '__main__':
         
         List=findProcessName(process_name)
         
+        processNamePID=[]
         if len(List)>0:
             print("print_info=1")
             print_info=True
