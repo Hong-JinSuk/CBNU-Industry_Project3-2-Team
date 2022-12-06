@@ -7,5 +7,13 @@ def home():
   global remained_time
   return render_template("time.html", time=remained_time)
 
-def test():
+def set_time():
     global remained_time
+    
+    while True:
+        remained_time -= 1
+        time.sleep(1)
+        
+        #if remained_time==0, kill process
+
+    return
