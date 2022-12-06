@@ -40,6 +40,17 @@ if __name__ == '__main__':
 
     if isRunning:
         isrunning=1
+        
+        List=findProcessName(process_name)
+        
+        if len(List)>0:
+            print("print_info=1")
+            print_info=1
+
+        else:
+            print("print_info=0")
+            print_info=0
+        
     else:
         isrunning=0
 
