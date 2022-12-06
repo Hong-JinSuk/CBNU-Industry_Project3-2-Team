@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="main">
+        <!--회원가입 폼-->
+        <div class="container register-form" id="register-form">
+            <form action="" id="register-form" method="" class="form">
+                <h2 class="form-title title">
+                    회원가입
+                </h2>
+                <div class="form-icon"></div>
+                <span class="form-span">회원가입 할 정보를 입력해주세요 !</span>
+                <input type="text" class="form-input" placeholder="ID" id="id">
+                <input type="password" class="form-input" placeholder="Password" id="pw">
+                <input type="password" class="form-input" placeholder="Re Password" id="a_pw">
+                <input type="button" value="회원가입" class="form-button button submit" onclick="create_id()">
+            </form>
+        </div>
+        <!--로그인 폼-->
+        <div class="container login-form" id="login-form">
+            <form action="" id="login-form" method="" class="form">
+                <h2 class="form-title title">
+                    로그인
+                </h2>
+                <div class="form-icon"></div>
+                <span class="form-span">로그인 정보를 입력해주세요 !</span>
+                <input type="email" class="form-input" placeholder="ID" id="id">
+                <input type="password" class="form-input" placeholder="Password" id="pw">
+                <a href="#" class="form-link"></a>
+                <input type="button" value="로그인" class="form-button button submit" onclick="login()"> 
+            </form>
+        </div>
+        <!--로그인 <=> 회원가입 폼-->
+        <div class="switch" id="switch-form">
+            <div class="switch-circle"></div>
+            <div class="switch-circle switch-circle-t"></div>
+            <!--로그인 창 클릭 폼-->
+            <div class="switch-form" id="switch-f1">
+                <h2 class="switch-title title">
+                    환영합니다!
+                </h2>
+                <p class="switch-description description">
+                    로그인 창으로 이동하시려면 버튼을 눌러주세요 !
+                </p>
+                <button class="switch-button button switch-btn">로그인</button>
+            </div>
+            <!--회원가입 클릭 폼-->
+            <div class="switch-form is-hidden" id="switch-f2">
+                <h2 class="switch-title title">
+                    반가워요 !
+                </h2>
+                <p class="switch-description description">
+                    회원가입 창으로 이동하시려면 버튼을 눌러주세요 !
+                </p>
+                <button class="switch-button button switch-btn">회원가입</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
