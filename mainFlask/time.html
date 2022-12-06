@@ -17,6 +17,9 @@
         
       {% if Print_info %}
         <h1>>>>>>>> information of {{ process_Name }}</h1>
+        {% for NamePID in Process_NamePID %}
+          <h3>{{ NamePID }}</h3>
+        {% endfor %}
         <h1>>>>>>>>>검사 종료!!</h1>
       {% else %}
         <h1>키워드를 포함하는 실행중인 프로세스가 없습니다.</h1>
