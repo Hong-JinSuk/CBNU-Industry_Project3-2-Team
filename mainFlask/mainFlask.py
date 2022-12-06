@@ -69,6 +69,10 @@ if __name__ == '__main__':
             print("print_info=0")
             print_info=False
         
+        PID=[]
+        for element in List:
+            PID.append(element['pid'])
+            
     else:
         isrunning=0
 
