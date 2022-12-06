@@ -15,5 +15,13 @@
       <h1>{{ process_Name }} is no exist!!</h1>
       {% endif %}
         
+      {% if Print_info %}
+        <h1>>>>>>>> information of {{ process_Name }}</h1>
+        <h1>>>>>>>>>검사 종료!!</h1>
+      {% else %}
+        <h1>키워드를 포함하는 실행중인 프로세스가 없습니다.</h1>
+        <h1>>>>>>>>>검사 종료!!</h1>
+      {% endif %}
+        
     </body>
 </html>
