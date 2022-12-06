@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   global remained_time
-  return render_template("time.html", time=remained_time, process_Name=process_name)
+  return render_template("time.html", time=remained_time, process_Name=process_name, Print_running=isrunning)
 
 def set_time():
     global remained_time
@@ -33,5 +33,14 @@ if __name__ == '__main__':
 
     thread = Thread(target=set_time, daemon=True)
     thread.start()
+
+    process_name='python'
+
+    isRunning=checkProcessRunning(process_name)
+
+    if isRunning:
+        isrunning=1
+    else:
+        isrunning=0
 
     app.run(debug=True)
