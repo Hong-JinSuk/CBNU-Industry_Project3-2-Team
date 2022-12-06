@@ -8,5 +8,12 @@
       {% if time %}
       <h1>현재 사용 가능한 시간 : {{ time }} 초!!</h1>
       {% endif %}
+        
+      {% if Print_running %}
+      <h1>{{ process_Name }} is running!!</h1>
+      {% else %}
+      <h1>{{ process_Name }} is no exist!!</h1>
+      {% endif %}
+        
     </body>
 </html>
