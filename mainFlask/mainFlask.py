@@ -10,7 +10,8 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   global remained_time
-  return render_template("time.html", time=remained_time, process_Name=process_name, Print_running=isrunning)
+  return render_template("time.html", time=remained_time,process_Name=process_name, Print_running=isrunning,
+  Print_info=print_info, Process_NamePID=processNamePID)
 
 def set_time():
     global remained_time
@@ -39,17 +40,21 @@ if __name__ == '__main__':
     isRunning=checkProcessRunning(process_name)
 
     if isRunning:
-        isrunning=1
+        isrunning=True
         
         List=findProcessName(process_name)
         
         if len(List)>0:
             print("print_info=1")
-            print_info=1
+            print_info=True
+            
+            for element in List:
+                processNamePID.append(element['name'])
+                processNamePID.append(element['pid'])
 
         else:
             print("print_info=0")
-            print_info=0
+            print_info=False
         
     else:
         isrunning=0
