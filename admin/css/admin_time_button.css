@@ -1,0 +1,25 @@
+/* 버튼 스타일 */
+button {
+    display: center;
+    align-items: center;
+    font-family: 'GmarketSansBold';
+    font-size: 20px;
+    color: #f5f5f5;
+    background-color: #000000;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 40px;
+    cursor: pointer;
+    word-break: keep-all;
+}
+
+/* 시간설정 버튼 */
+.start {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.start .btn_wrap {
+    position: relative;
+}
