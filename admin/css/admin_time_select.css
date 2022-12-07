@@ -1,0 +1,28 @@
+/* 사용자 및 시간 입력 */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 70px;
+}
+
+.inputs div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inputs input {
+    padding: 15px 20px;
+    margin: 0 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'GmarketSansMedium';
+    width: 200px;
+}
+
+.inputs input::placeholder {
+    color: #BABCBE;
+}
