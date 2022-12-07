@@ -62,12 +62,15 @@ if __name__ == '__main__':
             print_info=True
             
             for element in List:
-                processNamePID.append(element['name'])
-                processNamePID.append(element['pid'])
+                processNamePID.append(str(element['pid']) + " " + str(element['name']))
 
         else:
             print("print_info=0")
             print_info=False
+            
+        PID=[]
+        for element in List:
+            PID.append(element['pid'])
         
     else:
         isrunning=0
