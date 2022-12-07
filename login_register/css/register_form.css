@@ -1,0 +1,7 @@
+/*      회원가입 폼 
+        z-index를 활용
+*/
+.register-form{
+    z-index: 100;
+    left: calc(100%-600px);
+}

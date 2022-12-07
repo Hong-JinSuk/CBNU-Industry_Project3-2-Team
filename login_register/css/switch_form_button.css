@@ -1,0 +1,18 @@
+.switch-button{
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.switch-button:hover, .form-button:hover{
+    background-color: transparent;
+    border: 2px solid #4b70e2;
+    color: #4b70e2;
+    transition: all 0.3s;
+}
+
+.switch-button:focus, .switch-button:active{
+    box-shadow: 2px 2px 6px #d1d9e6,-2px -2px 6px #f9f9f9;
+    transform: scale(0.97);
+    transition: 0.25s;
+}

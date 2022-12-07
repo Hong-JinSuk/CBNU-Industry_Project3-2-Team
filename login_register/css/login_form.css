@@ -1,0 +1,4 @@
+.login-form{    
+    z-index: 0;
+    left: calc(100%-600px);
+}
