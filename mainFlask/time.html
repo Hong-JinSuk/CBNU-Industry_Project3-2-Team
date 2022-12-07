@@ -19,6 +19,8 @@
         <h1>>>>>>>> information of {{ process_Name }}</h1>
         {% for NamePID in Process_NamePID %}
           <h3>{{ NamePID }}</h3>
+          <!-- PID의 Cpu Usage & Memory Usage 정보-->
+          <h4>----------------------------------------------------</h4>
         {% endfor %}
         <h1>>>>>>>>>검사 종료!!</h1>
       {% else %}
