@@ -1,4 +1,4 @@
-#def killprocess(PID):
+def killprocess(PID):
     for proc in psutil.process_iter():
         try:
             # 프로세스 이름, PID 값 가져오기
