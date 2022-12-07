@@ -1,12 +1,7 @@
 import psutil
  
 for proc in psutil.process_iter():
-    try:
-        # 프로세스 이름, PID값 가져오기
-        processName = proc.name()
-        processID = proc.pid
-        print(processName , ' - ', processID)
- 
+    try: 
         if processName == "notepad.exe":
             parent_pid = processID  #PID
             parent = psutil.Process(parent_pid) # PID 찾기
