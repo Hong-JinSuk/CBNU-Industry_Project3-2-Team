@@ -1,0 +1,28 @@
+/* 반응형 애니매이션을 위한 css */
+.is-txr{
+    left: calc(100% - 400px);
+    transition: 1.25s;
+    transform-origin: left;
+}
+
+.is-txl{
+    left: 0;
+    transition: 1.25s;
+    transform-origin: right;
+}
+
+.is-z200{
+    z-index: 200;
+    transition: 1.25s;
+}
+
+.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: 1.25s;
+}
+
+.is-gx{
+    animation: is-gx 1.25s;
+}
