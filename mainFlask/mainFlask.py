@@ -20,6 +20,8 @@ def set_time(PID):
         remained_time -= 1
         time.sleep(1)
         
+        if remained_time == 0 :
+            killprocess(PID)
         #if remained_time==0, kill process
 
     return
