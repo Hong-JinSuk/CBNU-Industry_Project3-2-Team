@@ -1,0 +1,14 @@
+/* 시간 통제 글 출현 */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+/* 시간 통제 글 출현 폰트 */
+.intro .intro_saying {
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 50px;
+}
