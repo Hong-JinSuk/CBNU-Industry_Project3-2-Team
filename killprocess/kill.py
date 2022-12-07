@@ -4,7 +4,6 @@ def killprocess(PID):
             # 프로세스 이름, PID 값 가져오기
             processName = proc.name()
             processID = proc.pid
-            print(processName , ' - ', processID)
 
             for i in PID:
                 if processID == i:
