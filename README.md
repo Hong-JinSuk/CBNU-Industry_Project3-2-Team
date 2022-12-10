@@ -29,12 +29,16 @@
 ## [ How to install ]
 
 * python 설치
-* Flask 설치
-* pandas 설치
+* pip3 install flask
+* pip3 install pandas
+* pip3 install psutil
+* pip3 install pypiwin32
 * 그래프 표현을 위한 https://d3js.org/d3.v4.min.js 사용
 
 ## [ Dependency ]
 
-* Flask
-* psutil
-
+* Python 3.10.7
+* Flask 2.2.2
+* Werkzeug 2.2.2
+* HTML5, CSS, JavaScript
+* Visual Studio Code 1.71.0
