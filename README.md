@@ -31,6 +31,7 @@
 * python 설치
 * Flask 설치
 * pandas 설치
+* 그래프 표현을 위한 https://d3js.org/d3.v4.min.js 사용
 
 ## [ Dependency ]
 
