@@ -10,11 +10,15 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   global remained_time
+  global list_cpu_percent
+  global print_info
+
   return render_template("time.html", time=remained_time,process_Name=process_name, Print_running=isrunning,
   Print_info=print_info, Process_NamePID=processNamePID)
 
 def set_time(PID):
     global remained_time
+    global list_cpu_percent
     
     while True:
         remained_time -= 1
@@ -60,8 +64,22 @@ def killprocess(PID):
 
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):   #예외처리
             pass
-  
+
+def checkCpuUsage_thread(pid):
+    global list_cpu_percent
+    while True:
+        for process in psutil.process_iter():
+            if str(process.pid) == str(pid):
+                Cpu_Per=process.cpu_percent(interval=10)
+                list_cpu_percent.append(Cpu_Per)
+                print("CpuUsage of {0}({1}) : ".format(process.name(), process.pid)+ " " +str(Cpu_Per))
+        time.sleep(10)
+        list_cpu_percent.clear()
+
 if __name__ == '__main__':
+    
+    global remained_time
+    remained_time = 10
     
     process_name='python'
 
@@ -87,11 +105,14 @@ if __name__ == '__main__':
         PID=[]
         for element in List:
             PID.append(element['pid'])
-        
-        remained_time = 300 # 관리자가 설정할 시간
 
         thread = Thread(target=set_time, args=(PID,), daemon=True)
         thread.start()
+        
+        list_cpu_percent=[]
+        for i in range(len(PID)):
+                thread = Thread(target=checkCpuUsage_thread, args=(PID[i],), daemon=True)
+                thread.start()
 
         
     else:
