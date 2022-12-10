@@ -1,0 +1,9 @@
+.text_intro {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.text {
+    width: 40vh;
+}
