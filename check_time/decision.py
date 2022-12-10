@@ -11,3 +11,12 @@ if "게임 중":
         if time_used>time_limit:
             killprocess(PID)
             break
+            
+        else:
+            start=time.time()
+            #게임 중
+
+            while True:
+                if "게임 종료":
+                    end=time.time()
+                    break
