@@ -22,3 +22,10 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.warning_button.setObjectName("warning_button")
         self.warning_button.setText("Warning")
         self.warning_button.clicked.connect(self.Warning_event)
+
+        # Question_button
+        self.question_button = QtWidgets.QPushButton(self.centralwidget)
+        self.question_button.setGeometry(QtCore.QRect(380, 90, 100, 30))
+        self.question_button.setObjectName("question_button")
+        self.question_button.setText("Question")
+        self.question_button.clicked.connect(self.Question_event)
