@@ -75,3 +75,6 @@ var tooltip = d3.select("body")
 var legend = svgG.append("g")
     .attr("text-anchor", "end")
     .selectAll("g")
+    .data(series)
+    .enter().append("g")
+    .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
