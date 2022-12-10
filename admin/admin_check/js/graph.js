@@ -71,3 +71,7 @@ var tooltip = d3.select("body")
     .append("div")
     .attr("class", "toolTip")
     .style("display", "none");
+
+var legend = svgG.append("g")
+    .attr("text-anchor", "end")
+    .selectAll("g")
