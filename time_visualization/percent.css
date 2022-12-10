@@ -8,3 +8,11 @@
     gap: 10px;
     margin-bottom: 10px;
   }
+
+.chart {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
