@@ -43,3 +43,7 @@ svgG.append("g")
 var line = d3.line()
     .x(function(d) { return xScale(d.x); })
     .y(function(d) { return yScale(d.y); });
+var lineG = svgG.append("g")
+    .selectAll("g")
+    .data(data)
+       .enter().append("g");
