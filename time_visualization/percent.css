@@ -2,3 +2,9 @@
     position: relative;
     padding: 2%;
   }
+
+.container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
