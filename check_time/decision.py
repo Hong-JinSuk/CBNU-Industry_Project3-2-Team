@@ -20,3 +20,10 @@ if "게임 중":
                 if "게임 종료":
                     end=time.time()
                     break
+                    
+            t=end-start
+
+            #사용시간 최신화
+            time_used+=t
+            
+            in_df.to_csv('파일 경로',header='False',encoding='utf-8-sig')
