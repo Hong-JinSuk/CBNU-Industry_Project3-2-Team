@@ -1,5 +1,6 @@
 import pandas as pd
 import time
+from datetime import timedelta
 
 def check_time(PID):
     if "게임 중":
@@ -17,17 +18,18 @@ def check_time(PID):
                 break
 
             else:
-                start=time.time()
+                start=time.process_time()
                 #게임 중
 
                 while True:
                     if "게임 종료":
-                        end=time.time()
+                        end=time.process_time()
                         break
 
                 t=end-start
 
                 #사용시간 최신화
                 time_used+=t
+                in_df.loc['user1','사용시간']=timedelta(time_used)
 
                 in_df.to_csv('파일 경로',header='False',encoding='utf-8-sig')
