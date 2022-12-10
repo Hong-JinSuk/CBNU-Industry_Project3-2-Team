@@ -20,3 +20,7 @@ var svgG = svg.append("g")
 var xScale = d3.scalePoint()//scaleBand() scaleOrdinal
     .domain(keys)
     .rangeRound([0, width]);
+var yScale = d3.scaleLinear()
+    .domain([0, d3.max(dataset, function(d) { return d3.max(keys, function(key) { return d[key];});})])
+    .nice()
+    .range([height, 0]);
