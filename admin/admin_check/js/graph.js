@@ -24,3 +24,11 @@ var yScale = d3.scaleLinear()
     .domain([0, d3.max(dataset, function(d) { return d3.max(keys, function(key) { return d[key];});})])
     .nice()
     .range([height, 0]);
+var colors = d3.scaleOrdinal(d3.schemeCategory10);
+
+svgG.append("g")
+    .attr("class", "grid")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(xScale)
+        .tickSize(-height)
+    );
