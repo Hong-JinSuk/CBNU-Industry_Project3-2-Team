@@ -39,3 +39,7 @@ svgG.append("g")
         .ticks(5)
         .tickSize(-width)
        );
+
+var line = d3.line()
+    .x(function(d) { return xScale(d.x); })
+    .y(function(d) { return yScale(d.y); });
