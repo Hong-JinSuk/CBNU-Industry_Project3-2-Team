@@ -7,6 +7,7 @@
 |홍진석|장병준|안근우|
 |---|---|---|
 |[Hong-JinSuk](https://github.com/Hong-JinSuk)|[ByeongJun-Jang](https://github.com/ByeongJun-Jang)|[An-Geunwoo](https://github.com/kgeunwo77)|
+|n9805h@naver.com|qudwns8616@gmail.com|agu0903@naver.com|
 
 
 ## [ Demos ]
