@@ -1,5 +1,4 @@
 import pandas as pd
-import time
 
 #처음 제한시간 설정
 df=pd.DataFrame([[0,120],
@@ -9,4 +8,4 @@ df=pd.DataFrame([[0,120],
                 columns=['사용시간(분)','제한시간(분)'])
 
 #파일로 저장
-df.to_csv('C:/Users/Agwoo/Desktop/새 폴더/test2.csv',header='False',encoding='utf-8-sig')
+df.to_csv('파일 경로',header='False',encoding='utf-8-sig')
