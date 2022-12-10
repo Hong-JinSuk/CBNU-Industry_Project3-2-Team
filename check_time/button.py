@@ -89,3 +89,12 @@ class Ui_MainWindow(QtWidgets.QWidget):
             print('Reply clicked.')
         else:
             print('No clicked.')
+
+            
+if __name__=="__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+
+    ui = Ui_MainWindow()
+
+    sys.exit(app.exec_())
