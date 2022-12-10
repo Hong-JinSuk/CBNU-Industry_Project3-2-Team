@@ -109,11 +109,16 @@ if __name__ == '__main__':
         thread = Thread(target=set_time, args=(PID,), daemon=True)
         thread.start()
         
+        thread = Thread(target=checkCpuUsage, args=(PID,), daemon=True)
+        thread.start()
+        
         list_cpu_percent=[]
         for i in range(len(PID)):
                 thread = Thread(target=checkCpuUsage_thread, args=(PID[i],), daemon=True)
                 thread.start()
-
+              
+        thread = Thread(target=checkMemoryUsage, args=(PID,), daemon=True)
+        thread.start()
         
     else:
         isrunning=0
