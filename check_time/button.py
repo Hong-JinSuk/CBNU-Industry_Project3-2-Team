@@ -69,3 +69,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
             print('Reply clicked.')
         else:
             print('No clicked.')
+
+    # Question 버튼 클릭 이벤트
+    def Question_event(self):
+        buttonReply = QMessageBox.question(
+            self, 'Question Title', "Question Message", 
+            QMessageBox.Yes | QMessageBox.Save | QMessageBox.Cancel | QMessageBox.Reset | QMessageBox.No, 
+            QMessageBox.No
+            )
