@@ -11,7 +11,12 @@
 
 ## [ Demos ]
 
-이부분은 실행 화면
+#### 초기 회원가입 [ 관리자 ]
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/85213981/206849771-60d0106e-966f-4525-8020-66119f74f8d6.gif)
+#### 유저 별 시간설정
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/85213981/206849836-ca984941-0119-43bf-9f7b-45007c06fd39.gif)
+#### 유저 별 시간통계
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/85213981/206849843-d537c142-31ae-4c04-a1f9-b15079fc2b72.gif)
 
 ## [ How to install ]
 
