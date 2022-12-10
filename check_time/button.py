@@ -30,13 +30,13 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.question_button.setText("Question")
         self.question_button.clicked.connect(self.Question_event)
 
+    # Information 버튼  클릭 이벤트
     def Information_event(self):
         buttonReply = QMessageBox.information(
             self, 'Information Title', "Information Message", 
             QMessageBox.Yes | QMessageBox.Save | QMessageBox.Cancel | QMessageBox.Reset | QMessageBox.No, 
             QMessageBox.No
             )
-        
         if buttonReply == QMessageBox.Yes:
             print('Yes clicked.')
         elif buttonReply == QMessageBox.Save:
@@ -49,3 +49,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
             print('Reply clicked.')
         else:
             print('No clicked.')
+
+    # Warning 버튼  클릭 이벤트
+    def Warning_event(self):
+        buttonReply = QMessageBox.warning(
+            self, 'Warning Title', "Warning Message", 
+            QMessageBox.Yes | QMessageBox.Save | QMessageBox.Cancel | QMessageBox.Reset | QMessageBox.No, 
+            QMessageBox.No
+            )
