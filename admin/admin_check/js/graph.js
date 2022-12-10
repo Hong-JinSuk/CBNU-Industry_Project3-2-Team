@@ -66,3 +66,8 @@ lineG.selectAll("dot")
             tooltip.style("top",  (d3.event.pageY-10)+"px");
             tooltip.html("month. " + d.x + "<br/>" + "data value : " + d.y);
         });
+
+var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "toolTip")
+    .style("display", "none");
