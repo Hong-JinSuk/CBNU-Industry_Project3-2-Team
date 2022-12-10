@@ -1,0 +1,15 @@
+.menubar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menubar ul li {
+    margin: 10px;
+    padding: 10px;
+}
+a {
+    color: black; text-decoration: none;
+}
