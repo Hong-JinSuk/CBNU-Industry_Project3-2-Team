@@ -1,0 +1,25 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.title_img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.icon {
+    margin: 13px;
+    width: 100px;
+    display: flex;
+
+}
