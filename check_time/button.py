@@ -77,3 +77,15 @@ class Ui_MainWindow(QtWidgets.QWidget):
             QMessageBox.Yes | QMessageBox.Save | QMessageBox.Cancel | QMessageBox.Reset | QMessageBox.No, 
             QMessageBox.No
             )
+        if buttonReply == QMessageBox.Yes:
+            print('Yes clicked.')
+        elif buttonReply == QMessageBox.Save:
+            print('Save clicked.')
+        elif buttonReply == QMessageBox.Cancel:
+            print('Cancel clicked.')
+        elif buttonReply == QMessageBox.Close:
+            print('Close clicked.')
+        elif buttonReply == QMessageBox.Reset:
+            print('Reply clicked.')
+        else:
+            print('No clicked.')
