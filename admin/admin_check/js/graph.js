@@ -47,3 +47,8 @@ var lineG = svgG.append("g")
     .selectAll("g")
     .data(data)
        .enter().append("g");
+
+lineG.append("path")
+    .attr("class", "lineChart")
+    .style("stroke", function(d, i) { return colors( series[i]); })
+    .attr("d", function(d, i) {return line(d); });
