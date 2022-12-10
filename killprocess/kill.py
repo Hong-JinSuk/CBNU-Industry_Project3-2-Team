@@ -13,5 +13,5 @@ def killprocess(PID):
                         child.kill()
                     parent.kill()
 
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):  #예외 처리
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):   #예외처리
             pass

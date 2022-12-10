@@ -1,0 +1,8 @@
+.main {
+    height: 80vh;
+    display: flex;
+    flex-direction:row;
+}
+.main *{
+    margin-bottom: 20px;
+}
