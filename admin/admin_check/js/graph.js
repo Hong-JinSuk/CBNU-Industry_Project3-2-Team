@@ -52,3 +52,10 @@ lineG.append("path")
     .attr("class", "lineChart")
     .style("stroke", function(d, i) { return colors( series[i]); })
     .attr("d", function(d, i) {return line(d); });
+
+lineG.selectAll("dot")
+    .data(function(d) {return d })
+    .enter().append("circle")
+        .attr("r", 3)
+        .attr("cx", function(d) { return xScale(d.x) })
+        .attr("cy", function(d) { return yScale(d.y);})
