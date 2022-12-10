@@ -28,13 +28,14 @@
 
 ## [ How to install ]
 
-설치 방법
+* python 설치
+* Flask 설치
+* pandas 설치
 
 ## [ Dependency ]
 
-어디꺼 썻는지 (의존성)
-참고한 오픈소스 등등
-사용한 모델 ... 
+* Flask
+* psutil
 
 -------------------
 
