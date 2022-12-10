@@ -59,3 +59,10 @@ lineG.selectAll("dot")
         .attr("r", 3)
         .attr("cx", function(d) { return xScale(d.x) })
         .attr("cy", function(d) { return yScale(d.y);})
+        .on("mouseover", function() { tooltip.style("display", null); })
+        .on("mouseout",  function() { tooltip.style("display", "none"); })
+        .on("mousemove", function(d) {
+            tooltip.style("left", (d3.event.pageX+10)+"px");
+            tooltip.style("top",  (d3.event.pageY-10)+"px");
+            tooltip.html("month. " + d.x + "<br/>" + "data value : " + d.y);
+        });
