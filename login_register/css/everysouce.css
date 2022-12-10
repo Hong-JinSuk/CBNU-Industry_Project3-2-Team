@@ -1,0 +1,7 @@
+/* 모든 형태 모든 소스 적용 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
