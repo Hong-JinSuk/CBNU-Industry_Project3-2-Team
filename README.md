@@ -38,7 +38,3 @@
 * Flask
 * psutil
 
--------------------
-
-* [Our Project]
-  * []
