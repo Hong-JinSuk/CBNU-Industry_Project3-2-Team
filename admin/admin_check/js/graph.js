@@ -78,3 +78,9 @@ var legend = svgG.append("g")
     .data(series)
     .enter().append("g")
     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+legend.append("rect")
+      .attr("x", width - 20)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", colors);
