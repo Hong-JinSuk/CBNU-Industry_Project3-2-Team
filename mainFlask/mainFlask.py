@@ -96,46 +96,50 @@ if __name__ == '__main__':
     global remained_time
     remained_time = 10
     
-    process_name='python'
-
-    isRunning=checkProcessRunning(process_name)
-
-    if isRunning:
-        isrunning=True
+    while True:
         
-        List=findProcessName(process_name)
-        
+        global print_info
+    
+        process_name='python'
+        print_info=0
         processNamePID=[]
-        if len(List)>0:
-            print("print_info=1")
-            print_info=True
-            
+        PID=[]
+
+        isRunning=checkProcessRunning(process_name)
+
+        if isRunning:
+            isrunning=True
+
+            List=findProcessName(process_name)
+
+            if len(List)>0:
+                print("print_info=1")
+                print_info=True
+
+                for element in List:
+                    processNamePID.append(str(element['pid']) + " " + str(element['name']))
+
+            else:
+                print("print_info=0")
+                print_info=False
+                
             for element in List:
-                processNamePID.append(str(element['pid']) + " " + str(element['name']))
+                PID.append(element['pid'])
+
+            thread = Thread(target=set_time, args=(PID,), daemon=True)
+            thread.start()
+
+            list_cpu_percent=[]
+            for i in range(len(PID)):
+                    thread = Thread(target=checkCpuUsage_thread, args=(PID[i],), daemon=True)
+                    thread.start()
+
+            thread = Thread(target=checkMemoryUsage, args=(PID,), daemon=True)
+            thread.start()
 
         else:
-            print("print_info=0")
-            print_info=False
-            
-        PID=[]
-        for element in List:
-            PID.append(element['pid'])
+            isrunning=0
 
-        thread = Thread(target=set_time, args=(PID,), daemon=True)
-        thread.start()
+        app.run(debug=True)
         
-        thread = Thread(target=checkCpuUsage, args=(PID,), daemon=True)
-        thread.start()
-        
-        list_cpu_percent=[]
-        for i in range(len(PID)):
-                thread = Thread(target=checkCpuUsage_thread, args=(PID[i],), daemon=True)
-                thread.start()
-              
-        thread = Thread(target=checkMemoryUsage, args=(PID,), daemon=True)
-        thread.start()
-        
-    else:
-        isrunning=0
-
-    app.run(debug=True)
+        time.sleep(1)
