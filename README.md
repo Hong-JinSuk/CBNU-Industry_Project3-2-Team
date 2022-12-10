@@ -41,5 +41,6 @@
 * Python 3.10.7
 * Flask 2.2.2
 * Werkzeug 2.2.2
+* Pandas 1.3.5
 * HTML5, CSS, JavaScript
 * Visual Studio Code 1.71.0
