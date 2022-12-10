@@ -18,6 +18,14 @@
 #### 유저 별 시간통계
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/85213981/206849843-d537c142-31ae-4c04-a1f9-b15079fc2b72.gif)
 
+#### 프로토 타입 실행 -1
+![KakaoTalk_20221210_194914137](https://user-images.githubusercontent.com/86042721/206851500-5390c411-9d53-4f06-b4b3-9f60f783ae87.gif)
+#### 프로토 타입 실행 -2
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/86042721/206851433-ff426243-9825-48bb-ac49-1aa1e64f9769.gif)
+
+
+
+
 ## [ How to install ]
 
 설치 방법
