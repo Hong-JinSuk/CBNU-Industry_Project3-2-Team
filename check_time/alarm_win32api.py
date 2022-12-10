@@ -2,6 +2,10 @@ import win32api
 import pandas as pd
 
 df=pd.read_csv('파일 경로',index_col=0,engine='python')
+
+df['사용시간']=df['사용시간']/pd.Timedelta(minutes=1)
+df['제한시간']=df['제한시간']/pd.Timedelta(minutes=1)
+
 time_used=df.loc['user1','사용시간']
 time_limit=in_df.loc['user1','제한시간']
 remain=time_limit-time_used  #남은 시간
