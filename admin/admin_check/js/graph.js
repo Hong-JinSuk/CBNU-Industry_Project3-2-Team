@@ -32,3 +32,10 @@ svgG.append("g")
     .call(d3.axisBottom(xScale)
         .tickSize(-height)
     );
+
+svgG.append("g")
+    .attr("class", "grid")
+    .call(d3.axisLeft(yScale)
+        .ticks(5)
+        .tickSize(-width)
+       );
